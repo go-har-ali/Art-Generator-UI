@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## AI Art Generator UI
 
-## Getting Started
+Responsive Next.js 14 (App Router) interface that mirrors the provided desktop/mobile mocks.  
+Users can browse inspiration cards, prefill prompts, and generate AI art previews.  
+Redux Toolkit keeps prompts/results in sync between screens, while Tailwind handles the glassmorphism styling.
 
-First, run the development server:
+### Tech Stack
+- Next.js 14 (App Router, Turbopack dev server)
+- TypeScript
+- Redux Toolkit + React Redux
+- Tailwind CSS
+- Lucide React icons
+
+---
+
+## Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# clone your repo
+git clone https://github.com/YOUR_USERNAME/ai-art-generator-ui.git
+cd ai-art-generator-ui
+
+# install deps
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Run & Build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# dev server (http://localhost:3000 by default)
+npm run dev
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# production build + serve
+npm run build
+npm start
 
-## Learn More
+# lint (already run in CI/pre-push)
+npm run lint
+```
 
-To learn more about Next.js, take a look at the following resources:
+> If you see a lock error when restarting `npm run dev`, stop the previous process (Ctrl+C) or delete `.next/dev/lock`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Notes on Approach / Assumptions
 
-## Deploy on Vercel
+- **Two desktop pages, three mobile screens**: desktop keeps the inspiration list and text-to-image result preview inline; mobile introduces a dedicated `/result` screen that reads from the Redux `generation` slice.
+- **API abstraction**: `/api/*` routes proxy the Postman collection endpoints. Missing media fall back to local demo images after a `HEAD` probe so the UI never breaks.
+- **State sharing**: prompts/results live in Redux Toolkit so inspiration taps auto-fill the generator and mobile navigation can rehydrate the result screen.
+- **Styling**: Tailwind powers the gradient/glass look, with mobile-first layout and shared bottom navigation that lights up `Home`/`Create`.
+- **Loading & error**: 
+  - Skeleton grids + error banners for inspirations and model fetches.
+  - The generate button flips into “Generating…” and desktop shows a translucent overlay on the preview pane.
+  - API failures surface inline messages so users know to retry.
+- **Device detection**: a light `window.innerWidth` check routes only mobile users to `/result`, keeping desktop inline.
+- **Assumed data privacy**: share/download buttons operate on the stubbed image URL; replace with your storage endpoint if you need signed URLs.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Optional Enhancements / Ideas
+
+- Hook up real authentication for the profile icon + “My Creations”.
+- Persist the aspect ratio / selected model across sessions.
+- Replace the mock `/api/generate` stub with your real inference service.
+
+
