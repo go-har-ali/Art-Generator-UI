@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "0ce8a808-f35a-4aeb-b0d0-398edebde9d9",
+		"name": "FrontEndEvalution",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19143014",
+		"_collection_link": "https://orange-astronaut-108832.postman.co/workspace/Usama-Space~a001403f-b48c-434e-872d-15240fa99907/collection/19143014-0ce8a808-f35a-4aeb-b0d0-398edebde9d9?action=share&source=collection_link&creator=19143014"
+	},
+	"item": [
+		{
+			"name": "Get All Models",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token_value}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{ip}}/api/generation/models",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"api",
+						"generation",
+						"models"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Inspirations",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token_value}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{ip}}/api/inspirations?pagination=15&page=1",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"api",
+						"inspirations"
+					],
+					"query": [
+						{
+							"key": "pagination",
+							"value": "15"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ip",
+			"value": "https://eval.funsol.cloud",
+			"type": "string"
+		},
+		{
+			"key": "token_value",
+			"value": "token 4e761db43837cc636c044f5475b24241676b4ace",
+			"type": "string"
+		}
+	]
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "id": "realistic_disney",
+    "model": "Realistic",
+    "style": "Disney",
+    "label": "ICON",
+    "thumbnail": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "render_cinematic",
+    "model": "Render",
+    "style": "Cinematic",
+    "label": "RENDER",
+    "thumbnail": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "line_art_minimal",
+    "model": "Line Art",
+    "style": "Minimal",
+    "label": "LINE ART",
+    "thumbnail": "https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "pixel_arcade",
+    "model": "Pixel Art",
+    "style": "Arcade",
+    "label": "PIXEL ART",
+    "thumbnail": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "anime_dream",
+    "model": "Anime",
+    "style": "Dream",
+    "label": "ANIME",
+    "thumbnail": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "render_fantasy",
+    "model": "Render",
+    "style": "Fantasy",
+    "label": "RENDER",
+    "thumbnail": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "imagine_v3",
+    "model": "Imagine V3",
+    "style": "Epic",
+    "label": "IMAGINE V3",
+    "thumbnail": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "cartoon_story",
+    "model": "Cartoon",
+    "style": "Storybook",
+    "label": "CARTOON",
+    "thumbnail": "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": "anime_nebula",
+    "model": "Anime",
+    "style": "Nebula",
+    "label": "ANIME",
+    "thumbnail": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80"
+  }
+]
+
